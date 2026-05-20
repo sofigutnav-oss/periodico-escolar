@@ -1,4 +1,3 @@
-import VisorPDF from "./VisorPDF";
 import { useEffect, useState } from "react";
 
 import {
@@ -100,23 +99,23 @@ export default function PeriodicoEscolar() {
     <div className="min-h-screen bg-gray-100 text-gray-800">
 
       {/* HEADER */}
-      <header className="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+      <header className="bg-blue-950 text-white shadow-lg sticky top-0 z-50">
 
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
           <div>
 
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-3xl font-extrabold">
               Secundaria y Bachilleres Catemaco
             </h1>
 
-            <p className="text-sm text-blue-200">
+            <p className="text-blue-200 mt-1">
               Periódico y Anuario Escolar
             </p>
 
           </div>
 
-          <nav className="hidden md:flex gap-6 text-lg">
+          <nav className="hidden md:flex gap-8 text-lg">
 
             <a href="#inicio" className="hover:text-yellow-300 transition">
               Inicio
@@ -134,22 +133,19 @@ export default function PeriodicoEscolar() {
               Galería
             </a>
 
-            <a href="#contacto" className="hover:text-yellow-300 transition">
-              Contacto
-            </a>
-
           </nav>
+
         </div>
+
       </header>
 
       {/* HERO */}
       <section
         id="inicio"
-        className="relative h-[80vh] flex items-center justify-center text-center"
+        className="relative h-[90vh] flex items-center justify-center text-center"
         style={{
           backgroundImage:
             'url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop)',
-
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -157,245 +153,272 @@ export default function PeriodicoEscolar() {
 
         <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative z-10 text-white px-6 max-w-4xl">
+        <div className="relative z-10 max-w-5xl px-6 text-white">
 
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6">
-            Bienvenidos a Secundaria y Bachilleres Catemaco News
+          <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+            Bienvenidos a Campus News
           </h2>
 
-          <p className="text-xl md:text-2xl mb-8 text-gray-200">
-            Noticias, eventos y recuerdos de nuestra comunidad escolar.
+          <p className="text-xl md:text-2xl text-gray-200 mb-10">
+            Noticias, revistas y recuerdos de nuestra comunidad escolar.
           </p>
 
-          <button className="bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-2xl font-bold text-lg transition shadow-lg">
+          <a
+            href="#noticias"
+            className="bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-2xl font-bold text-lg transition shadow-xl"
+          >
             Explorar Noticias
-          </button>
+          </a>
 
         </div>
+
       </section>
 
       {/* FORMULARIO */}
-      <section className="max-w-4xl mx-auto py-12 px-6">
+      <section className="py-20 px-6">
 
-        <h2 className="text-4xl font-bold mb-8">
-          Publicar noticia
-        </h2>
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl p-10">
 
-        <div className="space-y-4">
+          <h2 className="text-4xl font-bold mb-8 text-center text-blue-950">
+            Publicar Noticia
+          </h2>
 
-          <input
-            type="text"
-            placeholder="Título"
-            value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
-            className="w-full p-4 rounded-xl border"
-          />
+          <div className="space-y-5">
 
-          <textarea
-            placeholder="Descripción"
-            value={descripcion}
-            onChange={(e) => setDescripcion(e.target.value)}
-            className="w-full p-4 rounded-xl border"
-          />
+            <input
+              type="text"
+              placeholder="Título"
+              value={titulo}
+              onChange={(e) => setTitulo(e.target.value)}
+              className="w-full p-4 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900"
+            />
 
-          <input
-            type="text"
-            placeholder="URL de imagen"
-            value={imagen}
-            onChange={(e) => setImagen(e.target.value)}
-            className="w-full p-4 rounded-xl border"
-          />
+            <textarea
+              placeholder="Descripción"
+              value={descripcion}
+              onChange={(e) => setDescripcion(e.target.value)}
+              className="w-full p-4 rounded-2xl border border-gray-300 h-40 focus:outline-none focus:ring-2 focus:ring-blue-900"
+            />
 
-          <button
-            onClick={guardarNoticia}
-            className="bg-blue-900 text-white px-6 py-3 rounded-xl"
-          >
-            Publicar noticia
-          </button>
+            <input
+              type="text"
+              placeholder="URL de imagen"
+              value={imagen}
+              onChange={(e) => setImagen(e.target.value)}
+              className="w-full p-4 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-900"
+            />
+
+            <button
+              onClick={guardarNoticia}
+              className="bg-blue-950 hover:bg-blue-900 text-white px-8 py-4 rounded-2xl transition w-full text-lg font-semibold"
+            >
+              Publicar noticia
+            </button>
+
+          </div>
 
         </div>
+
       </section>
 
       {/* NOTICIAS */}
       <section
         id="noticias"
-        className="py-20 px-6 max-w-7xl mx-auto"
+        className="py-24 px-6"
       >
 
-        <div className="text-center mb-14">
+        <div className="max-w-7xl mx-auto">
 
-          <h2 className="text-5xl font-bold mb-4">
-            Últimas Noticias
-          </h2>
+          <div className="text-center mb-16">
 
-          <p className="text-gray-600 text-lg">
-            Mantente informado sobre las actividades más importantes.
-          </p>
+            <h2 className="text-5xl font-extrabold text-blue-950 mb-5">
+              Últimas Noticias
+            </h2>
 
-        </div>
+            <p className="text-gray-600 text-xl">
+              Mantente informado sobre las actividades escolares.
+            </p>
 
-        <div className="grid md:grid-cols-3 gap-8">
+          </div>
 
-          {noticias.map((noticia) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <div
-              key={noticia.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition"
-            >
+            {noticias.map((noticia) => (
 
-              <img
-                src={noticia.imagen}
-                alt={noticia.titulo}
-                className="h-56 w-full object-cover"
-              />
+              <div
+                key={noticia.id}
+                className="bg-white rounded-3xl overflow-hidden shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300"
+              >
 
-              <div className="p-6">
+                <img
+                  src={noticia.imagen}
+                  alt={noticia.titulo}
+                  className="h-64 w-full object-cover"
+                />
 
-                <h3 className="text-2xl font-bold mb-3">
-                  {noticia.titulo}
-                </h3>
+                <div className="p-7">
 
-                <p className="text-gray-600 mb-4">
-                  {noticia.descripcion}
-                </p>
+                  <h3 className="text-2xl font-bold mb-4 text-blue-950">
+                    {noticia.titulo}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    {noticia.descripcion}
+                  </p>
+
+                </div>
 
               </div>
-            </div>
 
-          ))}
+            ))}
+
+          </div>
 
         </div>
+
       </section>
 
       {/* REVISTAS */}
       <section
         id="revistas"
-        className="py-20 px-6 bg-white"
+        className="py-24 px-6 bg-white"
       >
 
         <div className="max-w-7xl mx-auto">
 
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
 
-            <h2 className="text-5xl font-bold mb-4 text-blue-950">
+            <h2 className="text-5xl font-extrabold text-blue-950 mb-5">
               Revistas Escolares
             </h2>
 
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-xl">
               Explora nuestras ediciones digitales.
             </p>
 
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
             {revistas.map((revista) => (
 
               <div
                 key={revista.id}
-                className="bg-gray-100 rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition"
+                className="bg-gray-100 rounded-3xl overflow-hidden shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300"
               >
 
                 <img
                   src={revista.portada}
                   alt={revista.titulo}
-                  className="h-80 w-full object-contain bg-white"
+                  className="h-96 w-full object-cover bg-white"
                 />
 
-                <div className="p-6">
+                <div className="p-7">
 
-                  <h3 className="text-2xl font-bold mb-3 text-blue-950">
+                  <h3 className="text-2xl font-bold mb-4 text-blue-950">
                     {revista.titulo}
                   </h3>
 
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-8 leading-relaxed">
                     {revista.descripcion}
                   </p>
-                <div className="flex gap-4 flex-wrap">
 
-                  <a
-                    href={revista.pdf}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition"
-                  >
-                    Leer Revista
-                  </a>
+                  <div className="flex gap-4 flex-wrap">
 
-                  <a
-                    href={revista.pdf}
-                    download
-                    className="bg-gray-300 px-5 py-3 rounded-xl hover:bg-gray-400 transition"
-                  >
-                    Descargar PDF
-                  </a>
+                    <a
+                      href={revista.pdf}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-blue-950 hover:bg-blue-900 text-white px-6 py-3 rounded-2xl transition font-semibold"
+                    >
+                      Ver Revista
+                    </a>
+
+                    <a
+                      href={revista.pdf}
+                      download
+                      className="bg-gray-300 hover:bg-gray-400 px-6 py-3 rounded-2xl transition font-semibold"
+                    >
+                      Descargar
+                    </a>
+
+                  </div>
 
                 </div>
 
-                    </div>
-
-                    </div>
+              </div>
 
             ))}
 
           </div>
+
         </div>
+
       </section>
 
       {/* GALERÍA */}
       <section
         id="galeria"
-        className="py-20 px-6 max-w-7xl mx-auto"
+        className="py-24 px-6"
       >
 
-        <div className="text-center mb-14">
+        <div className="max-w-7xl mx-auto">
 
-          <h2 className="text-5xl font-bold mb-4">
-            Galería Escolar
-          </h2>
+          <div className="text-center mb-16">
 
-          <p className="text-gray-600 text-lg">
-            Revive los mejores momentos escolares.
-          </p>
+            <h2 className="text-5xl font-extrabold text-blue-950 mb-5">
+              Galería Escolar
+            </h2>
+
+            <p className="text-gray-600 text-xl">
+              Revive los mejores momentos escolares.
+            </p>
+
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            {galeria.map((img, index) => (
+
+              <div
+                key={index}
+                className="overflow-hidden rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl transition duration-300"
+              >
+
+                <img
+                  src={img}
+                  alt="Galería"
+                  className="h-80 w-full object-cover"
+                />
+
+              </div>
+
+            ))}
+
+          </div>
 
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
-
-          {galeria.map((img, index) => (
-
-            <div
-              key={index}
-              className="overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition"
-            >
-
-              <img
-                src={img}
-                alt="Galería"
-                className="h-72 w-full object-cover"
-              />
-
-            </div>
-
-          ))}
-
-        </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-950 text-gray-300 py-10 text-center">
+      <footer className="bg-gray-950 text-gray-300 py-16 mt-20">
 
-        <h3 className="text-2xl font-bold mb-3">
-          Campus News
-        </h3>
+        <div className="max-w-7xl mx-auto px-6 text-center">
 
-        <p className="mb-2">
-          Periódico y Anuario Escolar Digital
-        </p>
+          <h3 className="text-3xl font-bold mb-4 text-white">
+            Campus News
+          </h3>
 
-        <p className="text-sm text-gray-500">
-          © 2026 Todos los derechos reservados.
-        </p>
+          <p className="mb-3 text-lg">
+            Periódico y Anuario Escolar Digital
+          </p>
+
+          <p className="text-gray-500">
+            © 2026 Todos los derechos reservados.
+          </p>
+
+        </div>
 
       </footer>
 
