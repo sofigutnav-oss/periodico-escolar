@@ -107,7 +107,7 @@ export default function PeriodicoEscolar() {
           <div>
 
             <h1 className="text-3xl font-bold">
-              Campus News
+              Secundaria y Bachilleres Catemaco
             </h1>
 
             <p className="text-sm text-blue-200">
