@@ -160,7 +160,7 @@ export default function PeriodicoEscolar() {
         <div className="relative z-10 text-white px-6 max-w-4xl">
 
           <h2 className="text-5xl md:text-7xl font-extrabold mb-6">
-            Bienvenidos a Campus News
+            Bienvenidos a Secundaria y Bachilleres Catemaco News
           </h2>
 
           <p className="text-xl md:text-2xl mb-8 text-gray-200">
